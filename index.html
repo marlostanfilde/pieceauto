@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurboPièces Pro - Recherche par plaque et paiement sécurisé</title>
+  <meta name="description" content="TurboPièces Pro est une maquette de boutique de pièces auto avec recherche par plaque, compatibilité renforcée et paiement en ligne sécurisé.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand">
+          <span class="brand-mark">TP</span>
+          <div>
+            <p>TurboPièces Pro</p>
+            <span>Plaque, compatibilité, paiement</span>
+          </div>
+        </div>
+        <div class="topbar-links">
+          <a href="#lookup">Recherche plaque</a>
+          <a href="#catalogue">Catalogue</a>
+          <a href="#checkout">Paiement</a>
+          <a href="#contact" class="button ghost">Parler à un expert</a>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">BOUTIQUE PRO PIÈCES AUTO</p>
+          <h1>Le client cherche par plaque, voit son véhicule, commande en confiance.</h1>
+          <p class="hero-text">
+            Une expérience pensée pour vendre comme un vrai site pro: détection du véhicule, filtrage des pièces compatibles,
+            contrôle renforcé pour les références sensibles et paiement en ligne sécurisé.
+          </p>
+          <div class="hero-actions">
+            <a href="#lookup" class="button">Tester la recherche</a>
+            <a href="#checkout" class="button secondary">Voir le tunnel d’achat</a>
+          </div>
+          <ul class="stats">
+            <li><strong>1 recherche</strong><span>par plaque au centre du parcours</span></li>
+            <li><strong>3 niveaux</strong><span>de contrôle compatibilité</span></li>
+            <li><strong>100%</strong><span>paiement en ligne sécurisé</span></li>
+          </ul>
+        </div>
+
+        <aside class="hero-card trust-card">
+          <p class="card-label">Parcours client</p>
+          <h2>Ce que voit ton client</h2>
+          <ol class="flow-list">
+            <li>Plaque saisie</li>
+            <li>Véhicule reconnu</li>
+            <li>Pièces compatibles affichées</li>
+            <li>Contrôle avant validation</li>
+            <li>Paiement immédiat</li>
+          </ol>
+          <div class="mini-status">
+            <span class="status-dot"></span>
+            <p>Prêt à brancher sur une vraie API véhicule + Stripe</p>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="marquee">
+        <div class="marquee-track">
+          <span>recherche par plaque</span>
+          <span>vin en renfort</span>
+          <span>compatibilité moteur</span>
+          <span>paiement stripe</span>
+          <span>commande rassurante</span>
+          <span>validation avant expédition</span>
+          <span>recherche par plaque</span>
+          <span>vin en renfort</span>
+        </div>
+      </section>
+
+      <section class="section lookup-section" id="lookup">
+        <div class="section-heading narrow">
+          <p class="eyebrow">RECHERCHE PLAQUE</p>
+          <h2>Maquette du moteur principal</h2>
+          <p>Le client saisit sa plaque. Le site interroge une API véhicule, affiche la fiche détectée, puis ne montre que les pièces compatibles.</p>
+        </div>
+
+        <div class="lookup-layout">
+          <form class="plate-panel">
+            <div class="plate-head">
+              <p class="card-label">Étape 1</p>
+              <h3>Identifier le véhicule</h3>
+            </div>
+            <label class="plate-label" for="plate-input">Immatriculation</label>
+            <div class="plate-input-wrap">
+              <span class="plate-country">F</span>
+              <input id="plate-input" type="text" value="AB-123-CD" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="plate-actions">
+              <button type="button" class="button" id="plate-search-button">Lancer la recherche</button>
+              <button type="button" class="button secondary" id="plate-demo-button">Changer de véhicule</button>
+            </div>
+            <ul class="lookup-notes">
+              <li>Plaque utilisée pour préidentifier le véhicule.</li>
+              <li>VIN demandé seulement pour les pièces à risque.</li>
+              <li>Validation finale affichée avant paiement.</li>
+            </ul>
+          </form>
+
+          <div class="vehicle-panel">
+            <div class="vehicle-card" id="vehicle-card">
+              <div class="vehicle-header">
+                <div>
+                  <p class="card-label">Étape 2</p>
+                  <h3 id="vehicle-title">Peugeot 308 II</h3>
+                </div>
+                <span class="compat-badge" id="vehicle-badge">Compatibilité forte</span>
+              </div>
+              <div class="vehicle-specs" id="vehicle-specs">
+                <span>1.6 BlueHDi 120</span>
+                <span>2018</span>
+                <span>Diesel</span>
+                <span>Boîte manuelle</span>
+              </div>
+              <p id="vehicle-summary">
+                Véhicule reconnu à partir de la plaque. Les produits ci-dessous sont filtrés pour cette configuration.
+              </p>
+              <div class="confidence-bar">
+                <div class="confidence-bar-fill" id="confidence-fill" style="width: 86%;"></div>
+              </div>
+              <small id="confidence-text">Niveau de confiance compatibilité: 86%</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section assurance-section">
+        <div class="section-heading narrow">
+          <p class="eyebrow">RASSURANCE</p>
+          <h2>Pourquoi le client se sent en sécurité</h2>
+        </div>
+        <div class="assurance-grid">
+          <article>
+            <h3>Plaque + moteur</h3>
+            <p>Le site ne se contente pas de la plaque. Il vérifie aussi les données moteur et la version du véhicule.</p>
+          </article>
+          <article>
+            <h3>Blocage intelligent</h3>
+            <p>Si une pièce critique n’est pas certaine, le bouton d’achat peut demander le VIN avant validation.</p>
+          </article>
+          <article>
+            <h3>Preuve avant paiement</h3>
+            <p>Une bannière de compatibilité apparaît sur la fiche produit et récapitule ce qui a été contrôlé.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="catalogue">
+        <div class="section-heading">
+          <p class="eyebrow">CATALOGUE FILTRÉ</p>
+          <h2>Pièces compatibles avec le véhicule détecté</h2>
+        </div>
+        <div class="product-grid catalog-grid">
+          <article class="product-card">
+            <p class="product-tag">Compatible validé</p>
+            <h3>Kit freinage avant Bosch</h3>
+            <p>Plaquettes + disques ventilés compatibles avec Peugeot 308 II 1.6 BlueHDi 120.</p>
+            <div class="product-flags">
+              <span>Montage avant</span>
+              <span>Stock 12</span>
+              <span>24/48h</span>
+            </div>
+            <div class="product-meta">
+              <strong>149€</strong>
+              <span>Compatibilité: 97%</span>
+            </div>
+            <button type="button" class="button full add-cart-button" data-product="Kit freinage avant Bosch" data-price="149">Ajouter au panier</button>
+          </article>
+
+          <article class="product-card accent">
+            <p class="product-tag">VIN conseillé</p>
+            <h3>Kit distribution SKF</h3>
+            <p>Référence sensible. La plaque suffit pour une présélection, mais le VIN est recommandé avant expédition.</p>
+            <div class="product-flags">
+              <span>Moteur critique</span>
+              <span>Contrôle humain</span>
+              <span>Sur demande</span>
+            </div>
+            <div class="product-meta">
+              <strong>219€</strong>
+              <span>Compatibilité: 82%</span>
+            </div>
+            <button type="button" class="button full secondary add-cart-button" data-product="Kit distribution SKF" data-price="219">Ajouter avec vérification</button>
+          </article>
+
+          <article class="product-card">
+            <p class="product-tag">Entretien rapide</p>
+            <h3>Pack vidange complet</h3>
+            <p>Huile + filtres + bouchon de vidange, sélection adaptée au profil véhicule détecté.</p>
+            <div class="product-flags">
+              <span>Révision</span>
+              <span>Stock 30</span>
+              <span>Très demandé</span>
+            </div>
+            <div class="product-meta">
+              <strong>94€</strong>
+              <span>Compatibilité: 95%</span>
+            </div>
+            <button type="button" class="button full add-cart-button" data-product="Pack vidange complet" data-price="94">Ajouter au panier</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process-section">
+        <div class="section-heading">
+          <p class="eyebrow">TUNNEL PRO</p>
+          <h2>Ce qu’il faudra brancher en vrai</h2>
+        </div>
+        <div class="timeline-grid">
+          <article>
+            <span>01</span>
+            <h3>API plaque / véhicule</h3>
+            <p>Service partenaire pour récupérer les données techniques exploitables à partir de l’immatriculation.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Base de compatibilité</h3>
+            <p>Catalogue de pièces avec correspondance exacte par moteur, finition, année et parfois VIN.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Paiement Stripe</h3>
+            <p>Checkout carte bancaire, 3D Secure, mails de confirmation et gestion du statut de commande.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Back-office</h3>
+            <p>Validation manuelle des cas sensibles, suivi des commandes et mise à jour des stocks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section checkout-section" id="checkout">
+        <div class="section-heading">
+          <p class="eyebrow">PANIER + PAIEMENT</p>
+          <h2>Prévisualisation du checkout</h2>
+        </div>
+
+        <div class="checkout-layout">
+          <div class="cart-card">
+            <div class="checkout-card-head">
+              <div>
+                <p class="card-label">Étape 3</p>
+                <h3>Panier client</h3>
+              </div>
+              <span class="checkout-pill">Paiement en ligne</span>
+            </div>
+
+            <div class="cart-items" id="cart-items">
+              <article class="cart-item">
+                <div>
+                  <strong>Kit freinage avant Bosch</strong>
+                  <p>Compatible avec Peugeot 308 II 1.6 BlueHDi 120</p>
+                </div>
+                <span>149€</span>
+              </article>
+            </div>
+
+            <div class="cart-totals">
+              <div><span>Sous-total</span><strong id="subtotal">149€</strong></div>
+              <div><span>Livraison</span><strong>9€</strong></div>
+              <div class="total-row"><span>Total</span><strong id="total">158€</strong></div>
+            </div>
+          </div>
+
+          <div class="payment-card">
+            <div class="checkout-card-head">
+              <div>
+                <p class="card-label">Étape 4</p>
+                <h3>Paiement sécurisé</h3>
+              </div>
+              <span class="secure-badge">3D Secure</span>
+            </div>
+
+            <div class="secure-checks">
+              <span>Vehicule controle</span>
+              <span>Adresse validee</span>
+              <span>Carte securisee</span>
+            </div>
+
+            <form class="payment-form">
+              <label>
+                Nom sur la carte
+                <input type="text" placeholder="Malik K">
+              </label>
+              <label>
+                Numero de carte
+                <input type="text" placeholder="4242 4242 4242 4242">
+              </label>
+              <div class="payment-row">
+                <label>
+                  Expiration
+                  <input type="text" placeholder="12/28">
+                </label>
+                <label>
+                  CVC
+                  <input type="text" placeholder="123">
+                </label>
+              </div>
+              <div class="compat-summary">
+                <strong>Compatibilité affichée avant paiement</strong>
+                <p>Le client voit que sa commande correspond au véhicule détecté. Si le niveau de confiance est trop bas, le site demande un contrôle supplémentaire.</p>
+              </div>
+              <button type="button" class="button full">Payer maintenant</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section admin-section">
+        <div class="section-heading narrow">
+          <p class="eyebrow">BACK-OFFICE</p>
+          <h2>Vue opérateur pour les commandes sensibles</h2>
+        </div>
+        <div class="admin-grid">
+          <article class="admin-card">
+            <p class="card-label">Commande #2048</p>
+            <h3>Kit distribution SKF</h3>
+            <p>Peugeot 308 II • Plaque AB-123-CD • Niveau de confiance 82%</p>
+            <span class="admin-badge warning">VIN à demander</span>
+          </article>
+          <article class="admin-card">
+            <p class="card-label">Commande #2049</p>
+            <h3>Kit freinage avant Bosch</h3>
+            <p>Peugeot 308 II • Compatibilité forte • Paiement confirmé</p>
+            <span class="admin-badge success">Prêt à expédier</span>
+          </article>
+          <article class="admin-card">
+            <p class="card-label">Commande #2050</p>
+            <h3>Pack vidange complet</h3>
+            <p>Renault Clio V • Plaque reconnue • Contrôle automatique OK</p>
+            <span class="admin-badge success">Validation auto</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">PROJET RÉEL</p>
+          <h2>Cette maquette peut devenir une vraie boutique en ligne.</h2>
+          <p>On peut brancher ton nom, ton logo, tes vraies pièces, une API véhicule, Stripe et un back-office simple pour traiter les commandes.</p>
+        </div>
+        <form class="contact-form">
+          <input type="text" placeholder="Nom de la société">
+          <input type="text" placeholder="Téléphone / WhatsApp">
+          <input type="email" placeholder="Email">
+          <textarea rows="4" placeholder="Décris ton activité, le type de pièces vendues et le pays ciblé"></textarea>
+          <button type="button" class="button full">Lancer le projet</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
