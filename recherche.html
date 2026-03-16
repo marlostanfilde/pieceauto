@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurboPièces Pro - Recherche par plaque</title>
+  <meta name="description" content="Recherche véhicule par plaque pour orienter les clients vers les bonnes pièces auto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero hero-subpage">
+      <nav class="topbar">
+        <div class="brand">
+          <span class="brand-mark">TP</span>
+          <div>
+            <p>TurboPièces Pro</p>
+            <span>Pièces auto et compatibilité véhicule</span>
+          </div>
+        </div>
+        <div class="topbar-links">
+          <a href="index.html">Accueil</a>
+          <a href="recherche.html" class="nav-active">Recherche plaque</a>
+          <a href="catalogue.html">Catalogue</a>
+          <a href="contact.html" class="button ghost">Contact</a>
+        </div>
+      </nav>
+
+      <section class="subhero">
+        <p class="eyebrow">RECHERCHE VÉHICULE</p>
+        <h1>Une page dédiée, plus propre, pour identifier le véhicule avant toute commande.</h1>
+      </section>
+    </header>
+
+    <main>
+      <section class="section lookup-section first-section">
+        <div class="lookup-layout">
+          <form class="plate-panel">
+            <div class="plate-head">
+              <p class="card-label">Étape 1</p>
+              <h3>Entrer l’immatriculation</h3>
+            </div>
+            <label class="plate-label" for="plate-input">Immatriculation</label>
+            <div class="plate-input-wrap">
+              <span class="plate-country">F</span>
+              <input id="plate-input" type="text" value="AB-123-CD" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="plate-actions">
+              <button type="button" class="button" id="plate-search-button">Rechercher</button>
+              <button type="button" class="button secondary" id="plate-demo-button">Voir un autre exemple</button>
+            </div>
+            <ul class="lookup-notes">
+              <li>La plaque aide à préidentifier le véhicule.</li>
+              <li>Le VIN peut être demandé pour les pièces techniques.</li>
+              <li>Le client voit un niveau de confiance avant d’aller plus loin.</li>
+            </ul>
+          </form>
+
+          <div class="vehicle-panel">
+            <div class="vehicle-card" id="vehicle-card">
+              <div class="vehicle-header">
+                <div>
+                  <p class="card-label">Étape 2</p>
+                  <h3 id="vehicle-title">Peugeot 308 II</h3>
+                </div>
+                <span class="compat-badge" id="vehicle-badge">Compatibilité forte</span>
+              </div>
+              <div class="vehicle-specs" id="vehicle-specs">
+                <span>1.6 BlueHDi 120</span>
+                <span>2018</span>
+                <span>Diesel</span>
+                <span>Boite manuelle</span>
+              </div>
+              <p id="vehicle-summary">
+                Véhicule reconnu à partir de la plaque. La sélection de pièces peut ensuite être filtrée pour cette configuration.
+              </p>
+              <div class="confidence-bar">
+                <div class="confidence-bar-fill" id="confidence-fill" style="width: 86%;"></div>
+              </div>
+              <small id="confidence-text">Niveau de confiance compatibilité: 86%</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-panels">
+        <div class="section-heading narrow">
+          <p class="eyebrow">APRÈS LA DÉTECTION</p>
+          <h2>Ce que tu peux faire ensuite</h2>
+        </div>
+        <div class="assurance-grid">
+          <article>
+            <h3>Afficher seulement les familles compatibles</h3>
+            <p>Freinage, filtration, distribution, suspension, entretien ou accessoires selon le véhicule détecté.</p>
+          </article>
+          <article>
+            <h3>Demander le VIN si nécessaire</h3>
+            <p>Pour les pièces sensibles, on déclenche une vérification supplémentaire avant la validation finale.</p>
+          </article>
+          <article>
+            <h3>Pousser vers paiement ou demande de devis</h3>
+            <p>Selon ton style commercial, tu peux vendre directement ou passer d’abord par une validation humaine.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
