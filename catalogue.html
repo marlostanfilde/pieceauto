@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Pièces - Catalogue</title>
+  <meta name="description" content="Catalogue sobre de pièces auto présenté avec de grandes images et peu de texte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+      <a class="logo" href="index.html">
+        <span>AP</span>
+        <div>
+          <strong>Atelier Pièces</strong>
+          <small>Auto parts selection</small>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="recherche.html">Recherche</a>
+        <a href="catalogue.html" class="active">Catalogue</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-intro">
+        <p class="eyebrow">RESULTATS VEHICULE</p>
+        <h1>Toutes les pièces possibles pour le véhicule détecté.</h1>
+      </section>
+
+      <section class="results-layout">
+        <aside class="vehicle-result-card sticky-card">
+          <p class="eyebrow">VEHICULE</p>
+          <h2 id="results-vehicle-title">Peugeot 308 II</h2>
+          <div class="spec-list" id="results-vehicle-specs"></div>
+          <p id="results-vehicle-summary">Chargement des informations vehicule.</p>
+          <strong class="result-badge" id="results-vehicle-badge">Compatibilité forte</strong>
+          <div class="summary-box">
+            <span id="results-count">0 pieces</span>
+            <span id="results-family-count">0 familles</span>
+          </div>
+        </aside>
+
+        <div class="results-content">
+          <section class="results-toolbar">
+            <div class="toolbar-search">
+              <label for="parts-search">Recherche piece</label>
+              <input id="parts-search" type="text" placeholder="Ex: disque, filtre, kit...">
+            </div>
+            <div class="toolbar-actions" id="toolbar-actions"></div>
+          </section>
+          <section class="family-strip" id="family-strip"></section>
+          <section class="parts-grid" id="parts-grid"></section>
+          <section class="detail-card" id="detail-card">
+            <p class="eyebrow">DETAIL PIECE</p>
+            <h2 id="detail-title">Selectionne une piece</h2>
+            <p id="detail-family">Famille</p>
+            <p id="detail-description">La fiche detaillee apparait ici avec la reference, le statut et les informations de compatibilite.</p>
+            <div class="detail-meta" id="detail-meta"></div>
+            <div class="detail-actions">
+              <button type="button" class="button light" id="detail-add-button">Ajouter au panier</button>
+              <span class="cart-pill" id="cart-pill">Panier: 0</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
